@@ -22,6 +22,7 @@ class ScheduledPostGeneratorService(
                 likedByMe = false,
                 likesAmount = 0,
                 time = OffsetDateTime.now().toEpochSecond().toString(),
+                hidden = false
             )
         )
     }

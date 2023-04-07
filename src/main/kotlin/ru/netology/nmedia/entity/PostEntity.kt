@@ -16,9 +16,10 @@ data class PostEntity(
     var likedByMe: Boolean,
     var likesAmount: Int = 0,
     var repostAmount: Int = 0,
-    var video: String?
+    var video: String?,
+    var hidden: Boolean = false
 ) {
-    fun toDto() = Post(id, author, authorAvatar, time, content, likedByMe, likesAmount, repostAmount, video)
+    fun toDto() = Post(id, author, authorAvatar, time, content, likedByMe, likesAmount, repostAmount, video, hidden)
 
     companion object {
         fun fromDto(dto: Post) = PostEntity(
@@ -30,7 +31,8 @@ data class PostEntity(
             dto.likedByMe,
             dto.likesAmount,
             dto.repostAmount,
-            dto.video
+            dto.video,
+            dto.hidden
         )
     }
 }
